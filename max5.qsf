@@ -1,0 +1,350 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2011 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files from any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Altera Program License
+# Subscription Agreement, Altera MegaCore Function License
+# Agreement, or other applicable license agreement, including,
+# without limitation, that your use is for the sole purpose of
+# programming logic devices manufactured by Altera and sold by
+# Altera or its authorized distributors.  Please refer to the
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 11.1 Build 171 10/19/2011 SJ Full Version
+# Date created = 16:06:58  October 25, 2011
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		max5_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX V"
+set_global_assignment -name DEVICE 5M2210ZF256I5
+set_global_assignment -name TOP_LEVEL_ENTITY max5
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 11.1
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:29:33  OCTOBER 25, 2011"
+set_global_assignment -name LAST_QUARTUS_VERSION "12.1 SP1"
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
+
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk_config
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clkin_50
+set_location_assignment PIN_K1 -to fpga_conf_done
+set_location_assignment PIN_D3 -to fpga_config_d[0]
+set_location_assignment PIN_C2 -to fpga_config_d[1]
+set_location_assignment PIN_C3 -to fpga_config_d[2]
+set_location_assignment PIN_E3 -to fpga_config_d[3]
+set_location_assignment PIN_D2 -to fpga_config_d[4]
+set_location_assignment PIN_E4 -to fpga_config_d[5]
+set_location_assignment PIN_D1 -to fpga_config_d[6]
+set_location_assignment PIN_E5 -to fpga_config_d[7]
+set_location_assignment PIN_F3 -to fpga_config_d[8]
+set_location_assignment PIN_E1 -to fpga_config_d[9]
+set_location_assignment PIN_F4 -to fpga_config_d[10]
+set_location_assignment PIN_F2 -to fpga_config_d[11]
+set_location_assignment PIN_F1 -to fpga_config_d[12]
+set_location_assignment PIN_F6 -to fpga_config_d[13]
+set_location_assignment PIN_G2 -to fpga_config_d[14]
+set_location_assignment PIN_G3 -to fpga_config_d[15]
+
+
+set_location_assignment PIN_J3 -to fpga_dclk
+set_location_assignment PIN_N1 -to fpga_nconfig
+set_location_assignment PIN_J4 -to fpga_nstatus
+set_location_assignment PIN_H1 -to fpga_pr_done
+set_location_assignment PIN_P2 -to fpga_pr_error
+set_location_assignment PIN_E2 -to fpga_pr_ready
+set_location_assignment PIN_F5 -to fpga_pr_request
+
+set_location_assignment PIN_E14 -to fsm_a[1]
+set_location_assignment PIN_C14 -to fsm_a[2]
+set_location_assignment PIN_C15 -to fsm_a[3]
+set_location_assignment PIN_E13 -to fsm_a[4]
+set_location_assignment PIN_E12 -to fsm_a[5]
+set_location_assignment PIN_D15 -to fsm_a[6]
+set_location_assignment PIN_F14 -to fsm_a[7]
+set_location_assignment PIN_D16 -to fsm_a[8]
+set_location_assignment PIN_F13 -to fsm_a[9]
+set_location_assignment PIN_E15 -to fsm_a[10]
+set_location_assignment PIN_E16 -to fsm_a[11]
+set_location_assignment PIN_F15 -to fsm_a[12]
+set_location_assignment PIN_G14 -to fsm_a[13]
+set_location_assignment PIN_F16 -to fsm_a[14]
+set_location_assignment PIN_G13 -to fsm_a[15]
+set_location_assignment PIN_G15 -to fsm_a[16]
+set_location_assignment PIN_G12 -to fsm_a[17]
+set_location_assignment PIN_G16 -to fsm_a[18]
+set_location_assignment PIN_H14 -to fsm_a[19]
+set_location_assignment PIN_H15 -to fsm_a[20]
+set_location_assignment PIN_H13 -to fsm_a[21]
+set_location_assignment PIN_H16 -to fsm_a[22]
+set_location_assignment PIN_J13 -to fsm_a[23]
+set_location_assignment PIN_J16 -to fsm_a[24]
+set_location_assignment PIN_T2 -to fsm_a[25]
+set_location_assignment PIN_P5 -to fsm_a[26]
+set_location_assignment PIN_J14 -to fsm_d[0]
+set_location_assignment PIN_J15 -to fsm_d[1]
+set_location_assignment PIN_K16 -to fsm_d[2]
+set_location_assignment PIN_K13 -to fsm_d[3]
+set_location_assignment PIN_K15 -to fsm_d[4]
+set_location_assignment PIN_K14 -to fsm_d[5]
+set_location_assignment PIN_L16 -to fsm_d[6]
+set_location_assignment PIN_L11 -to fsm_d[7]
+set_location_assignment PIN_L15 -to fsm_d[8]
+set_location_assignment PIN_L12 -to fsm_d[9]
+set_location_assignment PIN_M16 -to fsm_d[10]
+set_location_assignment PIN_L13 -to fsm_d[11]
+set_location_assignment PIN_M15 -to fsm_d[12]
+set_location_assignment PIN_L14 -to fsm_d[13]
+set_location_assignment PIN_N16 -to fsm_d[14]
+set_location_assignment PIN_M13 -to fsm_d[15]
+set_location_assignment PIN_N7 -to flash_advn
+set_location_assignment PIN_R5 -to flash_cen[0]
+set_location_assignment PIN_M7 -to flash_cen[1]
+set_location_assignment PIN_R6 -to flash_clk
+set_location_assignment PIN_M6 -to flash_oen
+set_location_assignment PIN_T5 -to flash_rdybsyn[0]
+set_location_assignment PIN_R7 -to flash_rdybsyn[1]
+set_location_assignment PIN_P7 -to flash_resetn
+set_location_assignment PIN_N6 -to flash_wen
+set_location_assignment PIN_P10 -to max5_ben[0]
+set_location_assignment PIN_R11 -to max5_ben[1]
+set_location_assignment PIN_T12 -to max5_ben[2]
+set_location_assignment PIN_N11 -to max5_ben[3]
+set_location_assignment PIN_T11 -to max5_clk
+set_location_assignment PIN_R10 -to max5_csn
+set_location_assignment PIN_M10 -to max5_oen
+set_location_assignment PIN_N10 -to max5_wen
+set_location_assignment PIN_B9 -to clk125_en
+set_location_assignment PIN_E9 -to clk50_en
+set_location_assignment PIN_H12 -to clk_config
+set_location_assignment PIN_A15 -to clk_enable
+set_location_assignment PIN_A13 -to clk_sel
+set_location_assignment PIN_J12 -to clkin_50
+set_location_assignment PIN_D12 -to pgm_config
+set_location_assignment PIN_B14 -to pgm_led[0]
+set_location_assignment PIN_C13 -to pgm_led[1]
+set_location_assignment PIN_B16 -to pgm_led[2]
+set_location_assignment PIN_B13 -to pgm_sel
+set_location_assignment PIN_D9 -to clock_scl
+set_location_assignment PIN_C9 -to clock_sda
+set_location_assignment PIN_D10 -to cpu_resetn
+set_location_assignment PIN_A2 -to factory_load
+set_location_assignment PIN_R14 -to factory_request
+set_location_assignment PIN_N12 -to factory_status
+set_location_assignment PIN_B8 -to hsma_prsntn
+set_location_assignment PIN_P11 -to m570_clock
+set_location_assignment PIN_P12 -to m570_pcie_jtag_en
+set_location_assignment PIN_E11 -to max_conf_done
+set_location_assignment PIN_A4 -to max_error
+set_location_assignment PIN_A6 -to max_load
+set_location_assignment PIN_B7 -to overtemp
+set_location_assignment PIN_D5 -to sdi_rx_bypass
+set_location_assignment PIN_E8 -to sdi_rx_en
+set_location_assignment PIN_D11 -to sdi_tx_en
+set_location_assignment PIN_R12 -to security_mode
+set_location_assignment PIN_E7 -to sense_cs0n
+set_location_assignment PIN_A5 -to sense_sck
+set_location_assignment PIN_D7 -to sense_sdi
+set_location_assignment PIN_B6 -to sense_sdo
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_conf_done
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fpga_config_d
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fpga_cvp_confdone
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_dclk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_nconfig
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_nstatus
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_pr_done
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_pr_error
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_pr_ready
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_pr_request
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fsm_a
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fsm_d
+set_instance_assignment -name IO_STANDARD "2.5 V" -to flash_advn
+set_instance_assignment -name IO_STANDARD "1.8 V" -to flash_cen
+set_instance_assignment -name IO_STANDARD "2.5 V" -to flash_clk
+set_instance_assignment -name IO_STANDARD "2.5 V" -to flash_oen
+set_instance_assignment -name IO_STANDARD "1.8 V" -to flash_rdybsyn
+set_instance_assignment -name IO_STANDARD "2.5 V" -to flash_resetn
+set_instance_assignment -name IO_STANDARD "2.5 V" -to flash_wen
+set_instance_assignment -name IO_STANDARD "1.8 V" -to max5_ben
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max5_clk
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max5_csn
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max5_oen
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max5_wen
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk125_en
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk50_en
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk_enable
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clk_sel
+set_instance_assignment -name IO_STANDARD "2.5 V" -to pgm_config
+set_instance_assignment -name IO_STANDARD "2.5 V" -to pgm_led
+set_instance_assignment -name IO_STANDARD "2.5 V" -to pgm_sel
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clock_scl
+set_instance_assignment -name IO_STANDARD "2.5 V" -to clock_sda
+set_instance_assignment -name IO_STANDARD "2.5 V" -to cpu_resetn
+set_instance_assignment -name IO_STANDARD "2.5 V" -to factory_load
+set_instance_assignment -name IO_STANDARD "2.5 V" -to factory_request
+set_instance_assignment -name IO_STANDARD "2.5 V" -to factory_status
+set_instance_assignment -name IO_STANDARD "2.5 V" -to hsma_prsntn
+set_instance_assignment -name IO_STANDARD "2.5 V" -to m570_clock
+set_instance_assignment -name IO_STANDARD "2.5 V" -to m570_pcie_jtag_en
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max_conf_done
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max_error
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max_load
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max_resetn
+set_instance_assignment -name IO_STANDARD "2.5 V" -to msel
+set_instance_assignment -name IO_STANDARD "2.5 V" -to overtemp
+set_instance_assignment -name IO_STANDARD "2.5 V" -to pcie_jtag_en
+set_instance_assignment -name IO_STANDARD "2.5 V" -to sdi_rx_bypass
+set_instance_assignment -name IO_STANDARD "2.5 V" -to sdi_rx_en
+set_instance_assignment -name IO_STANDARD "2.5 V" -to sdi_tx_en
+set_instance_assignment -name IO_STANDARD "2.5 V" -to security_mode
+set_instance_assignment -name IO_STANDARD "2.5 V" -to sense_cs0n
+set_instance_assignment -name IO_STANDARD "2.5 V" -to sense_sck
+set_instance_assignment -name IO_STANDARD "2.5 V" -to sense_sdi
+set_instance_assignment -name IO_STANDARD "2.5 V" -to sense_sdo
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name SEARCH_PATH megafunctions/ -tag from_archive
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_RETIMING ON
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS OFF
+set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
+set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS OFF
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING OFF
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to clock_scl
+set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to clock_sda
+
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[9]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[10]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[11]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[12]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[13]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[14]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[15]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[16]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[18]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[17]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[19]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[20]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[21]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[22]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[23]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[24]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[25]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[9]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[10]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[11]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[12]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[13]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[14]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_d[15]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to flash_cen[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to flash_cen[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to flash_rdybsyn[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to flash_rdybsyn[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max5_ben[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max5_ben[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max5_ben[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to max5_ben[3]
+set_location_assignment PIN_C8 -to fan_on_n
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fan_on_n
+set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
+set_global_assignment -name ENABLE_DEVICE_WIDE_RESET ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name VERILOG_FILE q_sys/synthesis/q_sys.v
+set_global_assignment -name SDC_FILE max5.out.sdc
+set_global_assignment -name VHDL_FILE hdl/wdt.vhd
+set_global_assignment -name VHDL_FILE hdl/vj_decode.vhd
+set_global_assignment -name VHDL_FILE hdl/vj_block.vhd
+set_global_assignment -name VHDL_FILE hdl/temp_mon.vhd
+set_global_assignment -name VHDL_FILE hdl/slow_clk_gen.vhd
+set_global_assignment -name VHDL_FILE hdl/reset_pls.vhd
+set_global_assignment -name VHDL_FILE hdl/reset_generator.vhd
+set_global_assignment -name VHDL_FILE hdl/rbfOvj.vhd
+set_global_assignment -name VHDL_FILE hdl/pwoer_up_counter.vhd
+set_global_assignment -name VHDL_FILE hdl/power.vhd
+set_global_assignment -name VHDL_FILE hdl/pfl_control.vhd
+set_global_assignment -name VHDL_FILE hdl/ltc2418_cont.vhd
+set_global_assignment -name VHDL_FILE hdl/image_sel2.vhd
+set_global_assignment -name VHDL_FILE hdl/i2c_write_read.vhd
+set_global_assignment -name VHDL_FILE hdl/i2c_write.vhd
+set_global_assignment -name VHDL_FILE hdl/i2c_cont.vhd
+set_global_assignment -name VHDL_FILE hdl/fpga_interface.vhd
+set_global_assignment -name VHDL_FILE hdl/fan_cont.vhd
+set_global_assignment -name VHDL_FILE hdl/factory_control.vhd
+set_global_assignment -name VHDL_FILE hdl/err_led.vhd
+set_global_assignment -name VHDL_FILE hdl/data_enc.vhd
+set_global_assignment -name VHDL_FILE hdl/count.vhd
+set_global_assignment -name VHDL_FILE hdl/conf_sel.vhd
+set_global_assignment -name VHDL_FILE hdl/address_dec.vhd
+set_global_assignment -name QSYS_FILE q_sys.qsys
+set_global_assignment -name VHDL_FILE max5.vhd
+set_global_assignment -name SEARCH_PATH db/ip/q_sys/ -tag from_archive
+set_global_assignment -name SEARCH_PATH db/ip/q_sys/submodules/ -tag from_archive
+set_global_assignment -name SEARCH_PATH hdl/ -tag from_archive
+set_global_assignment -name SEARCH_PATH q_sys/synthesis/ -tag from_archive
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to max5_csn
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to max5_oen
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[0]
+set_location_assignment PIN_A9 -to si570_en
+set_global_assignment -name QIP_FILE p2.qip

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element $${FILENAME}
+   {
+   }
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element i2c_cont_bridge_0
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element opencores_i2c_0
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element vj_avalon_master_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="AUTO" />
+ <parameter name="device" value="5M2210ZF256C4" />
+ <parameter name="deviceFamily" value="MAX V" />
+ <parameter name="deviceSpeedGrade" value="4" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="maxAdditionalLatency" value="0" />
+ <parameter name="projectName" value="max5.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="1" />
+ <parameter name="timeStamp" value="1339401309046" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface
+   name="vj_clk_pls_p"
+   internal="vj_avalon_master_0.clk_pls_p"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="opencores_i2c_0_export_0"
+   internal="opencores_i2c_0.export_0"
+   type="conduit"
+   dir="end" />
+ <module kind="clock_source" version="12.0" enabled="1" name="clk_0">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module
+   kind="vj_avalon_master"
+   version="1.0"
+   enabled="1"
+   name="vj_avalon_master_0">
+  <parameter name="AUTO_CLOCK_SINK_CLOCK_RATE" value="50000000" />
+ </module>
+ <module
+   kind="i2c_cont_bridge"
+   version="1.0"
+   enabled="1"
+   name="i2c_cont_bridge_0">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="50000000" />
+ </module>
+ <module kind="opencores_i2c" version="9.1" enabled="1" name="opencores_i2c_0">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="50000000" />
+ </module>
+ <connection
+   kind="clock"
+   version="12.0"
+   start="clk_0.clk"
+   end="vj_avalon_master_0.clock_sink" />
+ <connection
+   kind="reset"
+   version="12.0"
+   start="clk_0.clk_reset"
+   end="vj_avalon_master_0.clock_sink_reset" />
+ <connection
+   kind="reset"
+   version="12.0"
+   start="clk_0.clk_reset"
+   end="i2c_cont_bridge_0.reset" />
+ <connection
+   kind="clock"
+   version="12.0"
+   start="clk_0.clk"
+   end="i2c_cont_bridge_0.clock" />
+ <connection
+   kind="avalon"
+   version="12.0"
+   start="vj_avalon_master_0.avalon_master"
+   end="i2c_cont_bridge_0.slv">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="12.0"
+   start="i2c_cont_bridge_0.avalon_master"
+   end="opencores_i2c_0.avalon_slave_0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+ </connection>
+ <connection
+   kind="clock"
+   version="12.0"
+   start="clk_0.clk"
+   end="opencores_i2c_0.clock" />
+ <connection
+   kind="reset"
+   version="12.0"
+   start="clk_0.clk_reset"
+   end="opencores_i2c_0.clock_reset" />
+</system>

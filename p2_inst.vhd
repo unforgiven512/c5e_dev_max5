@@ -1,0 +1,21 @@
+p2_inst : p2 PORT MAP (
+		fpga_conf_done	 => fpga_conf_done_sig,
+		fpga_nstatus	 => fpga_nstatus_sig,
+		fpga_pgm	 => fpga_pgm_sig,
+		pfl_clk	 => pfl_clk_sig,
+		pfl_flash_access_granted	 => pfl_flash_access_granted_sig,
+		pfl_nreconfigure	 => pfl_nreconfigure_sig,
+		pfl_nreset	 => pfl_nreset_sig,
+		flash_addr	 => flash_addr_sig,
+		flash_clk	 => flash_clk_sig,
+		flash_data	 => flash_data_sig,
+		flash_nadv	 => flash_nadv_sig,
+		flash_nce	 => flash_nce_sig,
+		flash_noe	 => flash_noe_sig,
+		flash_nreset	 => flash_nreset_sig,
+		flash_nwe	 => flash_nwe_sig,
+		fpga_data	 => fpga_data_sig,
+		fpga_dclk	 => fpga_dclk_sig,
+		fpga_nconfig	 => fpga_nconfig_sig,
+		pfl_flash_access_request	 => pfl_flash_access_request_sig
+	);

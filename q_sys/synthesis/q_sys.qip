@@ -1,0 +1,35 @@
+set_global_assignment -entity "q_sys" -library "q_sys" -name IP_TOOL_NAME "qsys"
+set_global_assignment -entity "q_sys" -library "q_sys" -name IP_TOOL_VERSION "12.1sp1"
+set_global_assignment -entity "q_sys" -library "q_sys" -name IP_TOOL_ENV "qsys"
+set_global_assignment -library "q_sys" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../q_sys.sopcinfo"]
+set_instance_assignment -entity "q_sys" -library "q_sys" -name SLD_INFO "QSYS_NAME q_sys HAS_SOPCINFO 1 GENERATION_ID 1361164996"
+set_global_assignment -library "q_sys" -name MISC_FILE [file join $::quartus(qip_path) "../../q_sys.cmp"]
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "q_sys" -name MISC_FILE [file join $::quartus(qip_path) "../../q_sys.qsys"]
+
+set_global_assignment -library "q_sys" -name VERILOG_FILE [file join $::quartus(qip_path) "q_sys.v"]
+set_global_assignment -library "q_sys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
+set_global_assignment -library "q_sys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
+set_global_assignment -library "q_sys" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]
+set_global_assignment -library "q_sys" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
+set_global_assignment -library "q_sys" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
+set_global_assignment -library "q_sys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/opencores_i2c.v"]
+set_global_assignment -library "q_sys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/i2c_master_bit_ctrl.v"]
+set_global_assignment -library "q_sys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/i2c_master_byte_ctrl.v"]
+set_global_assignment -library "q_sys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/i2c_master_defines.v"]
+set_global_assignment -library "q_sys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/i2c_master_top.v"]
+set_global_assignment -library "q_sys" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/timescale.v"]
+set_global_assignment -library "q_sys" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/i2c_cont_bridge.vhd"]
+set_global_assignment -library "q_sys" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/vj_avalon_decode.vhd"]
+set_global_assignment -library "q_sys" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/vj_avalon_encode.vhd"]
+set_global_assignment -library "q_sys" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/vj_avalon_master.vhd"]
+
+set_global_assignment -entity "altera_reset_controller" -library "q_sys" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "q_sys" -name IP_TOOL_VERSION "12.1"
+set_global_assignment -entity "altera_reset_controller" -library "q_sys" -name IP_TOOL_ENV "qsys"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "q_sys" -name IP_TOOL_NAME "altera_merlin_slave_translator"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "q_sys" -name IP_TOOL_VERSION "12.1"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "q_sys" -name IP_TOOL_ENV "qsys"
+set_global_assignment -entity "altera_merlin_master_translator" -library "q_sys" -name IP_TOOL_NAME "altera_merlin_master_translator"
+set_global_assignment -entity "altera_merlin_master_translator" -library "q_sys" -name IP_TOOL_VERSION "12.1"
+set_global_assignment -entity "altera_merlin_master_translator" -library "q_sys" -name IP_TOOL_ENV "qsys"
