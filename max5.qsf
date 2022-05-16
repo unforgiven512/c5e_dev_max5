@@ -41,9 +41,9 @@ set_global_assignment -name DEVICE 5M2210ZF256I5
 set_global_assignment -name TOP_LEVEL_ENTITY max5
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 11.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:29:33  OCTOBER 25, 2011"
-set_global_assignment -name LAST_QUARTUS_VERSION "12.1 SP1"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.1 Lite Edition"
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP "-40"
-set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 125
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
 
 set_instance_assignment -name IO_STANDARD "2.5 V" -to clk_config
@@ -233,8 +233,8 @@ set_global_assignment -name OPTIMIZE_POWER_DURING_SYNTHESIS OFF
 set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
 set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
 set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
-set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
-set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
+set_global_assignment -name TIMING_ANALYZER_DO_CCPP_REMOVAL ON
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
 set_global_assignment -name OPTIMIZE_POWER_DURING_FITTING OFF
 set_instance_assignment -name CURRENT_STRENGTH_NEW "MAXIMUM CURRENT" -to clock_scl
@@ -294,7 +294,30 @@ set_location_assignment PIN_C8 -to fan_on_n
 set_instance_assignment -name IO_STANDARD "2.5 V" -to fan_on_n
 set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
 set_global_assignment -name ENABLE_DEVICE_WIDE_RESET ON
-set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_global_assignment -name SEARCH_PATH db/ip/q_sys/ -tag from_archive
+set_global_assignment -name SEARCH_PATH db/ip/q_sys/submodules/ -tag from_archive
+set_global_assignment -name SEARCH_PATH hdl/ -tag from_archive
+set_global_assignment -name SEARCH_PATH q_sys/synthesis/ -tag from_archive
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to max5_csn
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to max5_oen
+set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[26]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[0]
+set_location_assignment PIN_A9 -to si570_en
 set_global_assignment -name VERILOG_FILE q_sys/synthesis/q_sys.v
 set_global_assignment -name SDC_FILE max5.out.sdc
 set_global_assignment -name VHDL_FILE hdl/wdt.vhd
@@ -323,28 +346,23 @@ set_global_assignment -name VHDL_FILE hdl/conf_sel.vhd
 set_global_assignment -name VHDL_FILE hdl/address_dec.vhd
 set_global_assignment -name QSYS_FILE q_sys.qsys
 set_global_assignment -name VHDL_FILE max5.vhd
-set_global_assignment -name SEARCH_PATH db/ip/q_sys/ -tag from_archive
-set_global_assignment -name SEARCH_PATH db/ip/q_sys/submodules/ -tag from_archive
-set_global_assignment -name SEARCH_PATH hdl/ -tag from_archive
-set_global_assignment -name SEARCH_PATH q_sys/synthesis/ -tag from_archive
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to max5_csn
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to max5_oen
-set_instance_assignment -name IO_STANDARD "2.5 V" -to fsm_a[26]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[15]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[14]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[13]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[12]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[11]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[10]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[9]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[8]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fpga_config_d[0]
-set_location_assignment PIN_A9 -to si570_en
 set_global_assignment -name QIP_FILE p2.qip
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name FLOW_ENABLE_RTL_VIEWER ON
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name FLOW_ENABLE_IO_ASSIGNMENT_ANALYSIS ON
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_BOARD_DESIGN_TIMING_TOOL "Stamp (Timing)"
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT STAMP -section_id eda_board_design_timing
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
+set_global_assignment -name EDA_BOARD_DESIGN_SIGNAL_INTEGRITY_TOOL "IBIS (Signal Integrity)"
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT IBIS -section_id eda_board_design_signal_integrity
+set_global_assignment -name EDA_BOARD_DESIGN_BOUNDARY_SCAN_TOOL "BSDL (Boundary Scan)"
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT BSDL -section_id eda_board_design_boundary_scan

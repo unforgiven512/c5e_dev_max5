@@ -275,13 +275,14 @@ begin
 		end if;
 	end process;
 
-	pfl_x16_inst : p2 PORT MAP (
-		fpga_conf_done	 => fpga_conf_done,--
-		fpga_nstatus	 => fpga_nstatus,--
-		fpga_pgm	 => pfl_pagesel_int,
---		fpga_pgm	 => "00" & factory_user,
-		pfl_clk	 => clk_50,		
-		pfl_flash_access_granted	 => fl_access_req and (not fpga_conf_done),--
+	pfl_x16_inst: p2
+	PORT MAP(
+		fpga_conf_done => fpga_conf_done,
+		fpga_nstatus => fpga_nstatus,
+		fpga_pgm => pfl_pagesel_int,
+--		fpga_pgm => "00" & factory_user,
+		pfl_clk => clk_50,
+		pfl_flash_access_granted => fl_access_req and (not fpga_conf_done),
 --		pfl_nreconfigure	=> load_image,--pfl_nreconfigure_sig,
 		pfl_nreconfigure	=> reconfigure_n,--pfl_nreconfigure_sig,
 		pfl_nreset	 => pfl_en,--max_resetn,--
@@ -298,42 +299,46 @@ begin
 		fpga_nconfig => pfl_nConfig,--
 		pfl_flash_access_request	 => fl_access_req--
 	);
-	
-	--flash_clk <= '0';
-	--flash_advn <= '0';
-	--flash_resetn <= '1';
 
-	
-	err_led_inst : err_led port map(
-			reset_n => reset_n,
-			clk => clk_50,
-			pfl_en => pfl_en,
-			conf_done => fpga_conf_done,
-			error_led => error_led
-		);
-		
-	rbfOvj_inst : rbfOvj port map(
+--	flash_clk <= '0';
+--	flash_advn <= '0';
+--	flash_resetn <= '1';
+
+
+	err_led_inst: err_led
+	PORT MAP(
+		reset_n => reset_n,
+		clk => clk_50,
+		pfl_en => pfl_en,
+		conf_done => fpga_conf_done,
+		error_led => error_led
+	);
+
+	rbfOvj_inst: rbfOvj
+	PORT MAP(
 		system_clk => clk_50,
 		reset_n => reset_n,
 		fpga_nstatus => fpga_nstatus,
 		data_out_port => rbfOvj_data,
 		clk_out_port => rbfOvj_dclk,
 		nConfig_out_port => rbfOvj_nConfig
-	   );
+	);
 
-	conf_sel_inst : conf_sel port map(
+	conf_sel_inst: conf_sel
+	PORT MAP(
 		-- selection signal
 		sel => pfl_en,    --'1' select a      '0'  select b
 
-		--pfl input
+		-- pfl input
 		data_in_a => pfl_data,
 		clk_in_a => pfl_dclk,
 		nConfig_in_a => pfl_nConfig,
-		--rbf input
+
+		-- rbf input
 		data_in_b => rbfOvj_data,
 		clk_in_b => rbfOvj_dclk,
 		nConfig_in_b => rbfOvj_nConfig,
-		
+
 		data_out => fpga_config_d,
 		clk_out => fpga_dclk,
 		nConfig_out => fpga_nconfig
@@ -341,23 +346,25 @@ begin
 
 	-- This function is to unlock the FPGA
 	-- mini-max will unlock, but this MAX still needs to control
-	factory_control_inst : factory_control port map(
-			reset_n => reset_n,
-			clk_50 => clk_50,
-			clk_pls_p => clk_pls_p,
-			
-			fpga_nstatus => fpga_nstatus,
---			security_mode => security_mode,
---			m570_clock => m570_clock,
---			factory_request => factory_request,
---			factory_status => factory_status,
+	factory_control_inst: factory_control
+	PORT MAP(
+		reset_n => reset_n,
+		clk_50 => clk_50,
+		clk_pls_p => clk_pls_p,
 
-			pcie_jtag_en => pcie_jtag_en,
---			m570_pcie_jtag_en	=> m570_pcie_jtag_en,
+		fpga_nstatus => fpga_nstatus,
+--		security_mode => security_mode,
+--		m570_clock => m570_clock,
+--		factory_request => factory_request,
+--		factory_status => factory_status,
 
-			pfl_start_mask => pfl_start_mask,
-			pfl_start_pls_n => pfl_start_pls_n
-		);
+		pcie_jtag_en => pcie_jtag_en,
+--		m570_pcie_jtag_en	=> m570_pcie_jtag_en,
 
-		pfl_en_out <= pfl_en;
+		pfl_start_mask => pfl_start_mask,
+		pfl_start_pls_n => pfl_start_pls_n
+	);
+
+	pfl_en_out <= pfl_en;
+
 end rtl;

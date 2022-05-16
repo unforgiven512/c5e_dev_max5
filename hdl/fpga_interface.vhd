@@ -16,33 +16,32 @@ use ieee.std_logic_unsigned.all;
 
 
 entity fpga_interface is
-	port
-	(
-		--Global signals
-		reset_n: in std_logic;
+	port(
+		-- Global signals
+		reset_n : in std_logic;
 		fsm_clk : in std_logic;
-		
-		--FPGA interface
-		max5_csn: in std_logic;
-		max5_wen: in std_logic;
-		max5_oen: in std_logic;
+
+		-- FPGA interface
+		max5_csn : in std_logic;
+		max5_wen : in std_logic;
+		max5_oen : in std_logic;
 		max5_ben : in std_logic_vector(3 downto 0);
 		max5_clk : in std_logic;
-		
-		address: inout std_logic_vector(4 downto 0);
-		data: inout std_logic_vector(15 downto 0);
+
+		address : inout std_logic_vector(4 downto 0);
+		data : inout std_logic_vector(15 downto 0);
 --		max_ben : in std_logic_vector(3 downto 0); -- byte write enable signal
-		
-		--dipswitch/PFL interface
-		dsw_pagesel: in std_logic_vector(3 downto 0);
-		pfl_pagesel: out std_logic_vector(2 downto 0);
+
+		-- dipswitch/PFL interface
+		dsw_pagesel : in std_logic_vector(3 downto 0);
+		pfl_pagesel : out std_logic_vector(2 downto 0);
 		srst_out : out std_logic;
-		
+
 		-- power and temp data
 		diff_raw : in std_logic_vector(23 downto 0);
 		single_raw : in std_logic_vector(23 downto 0);
 		pfl_en : in std_logic;
-		
+
 		-- clk control
 --		clk125_en : out std_logic;
 --		clk66_en : out std_logic;
@@ -50,7 +49,7 @@ entity fpga_interface is
 --		clk50_en : out std_logic;
 --		clk_sel : in std_logic;
 --		clk_enable : in std_logic;
-		
+
 		-- board setting
 		sram_mode : out std_logic;
 		sram_zz : out std_logic;
@@ -61,8 +60,7 @@ entity fpga_interface is
 		MAX_VER : in std_logic_vector(7 downto 0);
 		fan_speed_overwrite : out std_logic;
 		factory_confign : in std_logic;
-		system_clk : in std_logic		
-		
+		system_clk : in std_logic
 	);
 
 end fpga_interface;

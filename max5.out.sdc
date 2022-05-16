@@ -45,6 +45,7 @@ create_clock -name {flash_clk} -period 20.000 -waveform { 0.000 10.000 } [get_po
 create_clock -name {fpga_dclk} -period 10.000 -waveform { 0.000 5.000 } [get_ports {fpga_dclk}]
 
 
+
 #**************************************************************
 # Create Generated Clock
 #**************************************************************
@@ -73,6 +74,7 @@ set_input_delay -add_delay  -clock [get_clocks {clkin_50}]  1.000 [get_ports {cl
 set_input_delay -add_delay  -clock [get_clocks {clkin_50}]  1.000 [get_ports {max5_csn}]
 set_input_delay -add_delay  -clock [get_clocks {clkin_50}]  1.000 [get_ports {max5_oen}]
 set_input_delay -add_delay  -clock [get_clocks {clkin_50}]  1.000 [get_ports {max5_wen}]
+
 
 
 #**************************************************************
@@ -129,6 +131,7 @@ set_output_delay -add_delay  -clock [get_clocks {clkin_50}]  0.000 [get_ports {f
 set_output_delay -add_delay  -clock [get_clocks {clkin_50}]  2.000 [get_ports {sense_cs0n}]
 
 
+
 #**************************************************************
 # Set Clock Groups
 #**************************************************************
@@ -138,6 +141,7 @@ set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}]
 set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
 set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
 set_clock_groups -asynchronous -group [get_clocks {altera_reserved_tck}] 
+
 
 
 #**************************************************************
@@ -161,6 +165,7 @@ set_false_path -to [get_ports {sense_sck}]
 set_false_path -to [get_ports {sense_sdi}]
 set_false_path -to [get_ports {clock_scl}]
 set_false_path -to [get_ports {clock_sda}]
+
 
 
 #**************************************************************
